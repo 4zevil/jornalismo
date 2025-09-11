@@ -1,0 +1,57 @@
+.noticia {
+  display: flex;          /* coloca imagem e textos lado a lado */
+  align-items: center;    /* alinha verticalmente no centro */
+  gap: 20px;              /* espaço entre imagem e textos */
+  margin: 20px 0;         /* espaçamento em cima/baixo */
+}
+
+.imagem-noticia img {
+  max-width: 250px;       /* limita largura */
+  height: auto;           /* mantém proporção */
+  border-radius: 8px;     /* bordas arredondadas (opcional) */
+}
+
+.textos-noticia {
+  display: flex;
+  flex-direction: column; /* deixa os textos um embaixo do outro */
+  gap: 5px;               /* espaço entre linhas */
+  font-family: Arial, sans-serif;
+}
+
+.assuntos-em-alta {
+  width: fit-content;     
+  margin-left: auto;      
+  margin-right: 20px;     
+  font-family: Arial, sans-serif;
+}
+
+.assuntos-em-alta h2 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;      
+}
+
+.em-alta {
+  display: flex;
+  align-items: center;    
+  gap: 10px;
+  margin-bottom: 12px;    
+}
+
+.txt-ntc-em-alta {
+  font-size: 16px;
+  flex: 1;                /* texto ocupa espaço à esquerda */
+}
+
+.img-ntc_em-alta {
+  flex-shrink: 0;         /* impede a imagem de encolher */
+  border-radius: 6px;     /* opcional: cantos arredondados */
+}
+
+.mais-conteudos {
+  margin-top: 15px;
+  font-style: italic;
+  text-align: right;
+  color: #555;
+}
