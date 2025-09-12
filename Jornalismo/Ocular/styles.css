@@ -1,57 +1,92 @@
-.noticia {
-  display: flex;          /* coloca imagem e textos lado a lado */
-  align-items: center;    /* alinha verticalmente no centro */
-  gap: 20px;              /* espaço entre imagem e textos */
-  margin: 20px 0;         /* espaçamento em cima/baixo */
+.conteudo {
+  display: flex;          /* transforma o contêiner em flexbox,
+                             permitindo alinhar filhos lado a lado */
+  justify-content: space-between; /* cria espaço entre os dois lados:
+                                     manda um bloco para a esquerda
+                                     e o outro para a direita */
+  align-items: flex-start; /* garante que os dois blocos
+                              (notícias e assuntos) fiquem
+                              alinhados pelo topo */
 }
 
-.imagem-noticia img {
-  max-width: 250px;       /* limita largura */
-  height: auto;           /* mantém proporção */
-  border-radius: 8px;     /* bordas arredondadas (opcional) */
+/* Assuntos em alta (vai ficar à esquerda) */
+.direita {
+  flex: 1;                /* ocupa uma parte proporcional do espaço */
+  text-align: right;       /* texto dentro desse bloco alinhado à esquerda */
+
+
+}
+
+/* Notícias (vai ficar à direita) */
+.noticias {
+  flex: 2;                /* ocupa mais espaço que os assuntos em alta */
+  text-align: left;       /* mantém o texto alinhado à esquerda */
+
+
 }
 
 .textos-noticia {
-  display: flex;
-  flex-direction: column; /* deixa os textos um embaixo do outro */
-  gap: 5px;               /* espaço entre linhas */
-  font-family: Arial, sans-serif;
+  display: flex;             /* Faz o bloco de textos usar flexbox */
+  flex-direction: column;    /* Organiza os textos em coluna (um abaixo do outro) */
+  justify-content: center;   /* Alinha os textos no centro vertical */
+  text-align: left;          /* Mantém o texto alinhado à esquerda */
 }
 
-.assuntos-em-alta {
-  width: fit-content;     
-  margin-left: auto;      
-  margin-right: 20px;     
-  font-family: Arial, sans-serif;
+.imagem-noticia {
+  margin-right: 15px;        /* Cria um espaço entre a imagem e o texto */
 }
 
-.assuntos-em-alta h2 {
-  margin: 0 0 15px 0;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;      
+.noticia {
+  display: flex;            /* Ativa o Flexbox, permitindo alinhar itens lado a lado */
+  align-items: center;       /* Alinha imagem e texto pelo centro vertical */
+  margin-bottom: 20px;       /* Dá um espaço entre uma notícia e outra */
 }
 
-.em-alta {
-  display: flex;
-  align-items: center;    
-  gap: 10px;
-  margin-bottom: 12px;    
+
+
+
+.ntc-em-alta {
+  display: flex;            /* Ativa o Flexbox para alinhar texto e imagem lado a lado */
+  align-items: center;       /* Centraliza verticalmente texto e imagem */
+  justify-content: flex-start; /* Garante que tudo fique alinhado à esquerda */
+  margin-bottom: 15px;       /* Espaço entre cada notícia em alta */
 }
 
+/* Texto da notícia em alta */
 .txt-ntc-em-alta {
-  font-size: 16px;
-  flex: 1;                /* texto ocupa espaço à esquerda */
+  margin-right: 10px;        /* Espaço entre o texto e a imagem */
+  text-align: right;         /* Mantém o texto alinhado à direita da área dele */
+  flex: 1;                   /* Faz o texto ocupar o espaço que sobrar à esquerda */
 }
 
-.img-ntc_em-alta {
-  flex-shrink: 0;         /* impede a imagem de encolher */
-  border-radius: 6px;     /* opcional: cantos arredondados */
+/* Imagem da notícia em alta */
+.img-ntc-em-alta {
+  flex-shrink: 0;            /* Evita que a imagem seja redimensionada pelo flex */
 }
 
-.mais-conteudos {
-  margin-top: 15px;
-  font-style: italic;
-  text-align: right;
-  color: #555;
+
+
+.previsao-tempo {
+  display: flex;                /* Imagens + temperatura na mesma linha */
+  justify-content: space-between; /* Imagens à esquerda, temperatura à direita */
+  align-items: center;           /* Alinha verticalmente */
+  margin-top: 15px;              /* Espaço acima para separar do texto anterior */
+  text-align: center;            /* Centraliza os labels abaixo das imagens */
+}
+
+.momentos {
+  display: flex;                 /* 3 imagens lado a lado */
+  gap: 10px;                     /* Espaço entre cada imagem */
+}
+
+.momento {
+  display: flex;
+  flex-direction: column;        /* Imagem em cima, label embaixo */
+  align-items: center;           /* Centraliza imagem + texto */
+}
+
+.temperatura {
+  font-weight: bold;
+  text-align: right;             /* Temperatura alinhada à direita */
+  white-space: nowrap;           /* Mantém "X° max / X° min" numa só linha */
 }
